@@ -11,7 +11,7 @@ class SiteController extends Controller
 
   public function actionIndex()
   {
-    return 'Indexaction have';
+    return $this->render('index');
   }
 
 }
