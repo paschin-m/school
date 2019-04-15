@@ -1,5 +1,6 @@
 <?php
     use yii\bootstrap\NavBar;
+    use yii\bootstrap\Nav;
 ?>
 <?php $this->beginPage(); ?>
 <html lang="ru">
@@ -18,6 +19,14 @@
             'options' => [
                     'class'=>'navbar-default navbar-fixed-top'
             ]
+    ]);
+    $menu=[
+            ['label'=>'Войти', 'url'=>['/site/join']],
+            ['label'=>'Зарегистрироваться', 'url'=>['/site/login']],
+    ];
+    echo Nav::widget([
+            'options'=>['class'=>'navbar-nav navbar-right'],
+            'items'=>$menu
     ]);
     NavBar::end();
 ?>
