@@ -18,7 +18,8 @@ class UserIdentity extends UserRecord implements IdentityInterface
    */
   public static function findIdentity($id)
   {
-    // TODO: Implement findIdentity() method.
+    //сам сам должен написать как найти запись
+    return static::findOne($id);
   }
 
   /**
@@ -41,7 +42,7 @@ class UserIdentity extends UserRecord implements IdentityInterface
    */
   public function getId()
   {
-    // TODO: Implement getId() method.
+    return $this->id;
   }
 
   /**
