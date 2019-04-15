@@ -1,7 +1,10 @@
 <?php
 
+//$params = require __DIR__ . '/params.php';
+$db = require __DIR__ . '/db.php';
 
-  return [
+
+  $config= [
       'id'=>'school',
 
       'basePath' =>realpath(__DIR__.'/../'),
@@ -32,5 +35,8 @@
              'class' =>'yii\debug\Module',
              'allowedIPs' => ['127.0.0.1', '::1']
          ]
-     ]
+     ],
+      'db'=> $db,
   ];
+
+  return $config;
