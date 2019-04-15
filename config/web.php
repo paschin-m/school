@@ -16,6 +16,9 @@ $db = require __DIR__ . '/db.php';
               'showScriptName'=>false
           ],
           'db'=> $db,
+          'user'=>[
+              'identityClass'=>'app\models\UserIdentity'
+          ],
 
         'request'=>[
             'cookieValidationKey' => 'qBbuejR7ap0rtcbu__SvWeHOb64NhLDB',
