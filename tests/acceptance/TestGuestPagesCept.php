@@ -11,3 +11,4 @@ $I->see('Join us','h1');
 
 $I->amOnPage('/site/login');
 $I->see('Login','h1');
+
