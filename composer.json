@@ -1,0 +1,17 @@
+{
+    "require": {
+        "fxp/composer-asset-plugin": "*",
+        "yiisoft/yii2": "*",
+        "aki/yii2-vue": "^0.5.1",
+        "codeception/codeception": "*",
+        "romdim/yii2-bootstrap-material": "dev-master",
+        "yiisoft/yii2-bootstrap": "*"
+    },
+    "config": {
+        "fxp-asset": {
+            "installer-paths": {
+                "bower-asset-library": "vendor/bower"
+            }
+        }
+    }
+}
