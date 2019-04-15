@@ -31,3 +31,4 @@ $user1["password"]="errorpass";
 
 $I->loginUser($user1);
 $I->see('Неверный пароль пользователя');
+

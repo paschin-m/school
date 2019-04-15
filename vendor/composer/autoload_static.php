@@ -72,6 +72,7 @@ class ComposerStaticInitd3121c7a243162ee5bfa7fa96c771736
         'F' => 
         array (
             'Fxp\\Composer\\AssetPlugin\\' => 25,
+            'Faker\\' => 6,
             'Facebook\\WebDriver\\' => 19,
         ),
         'D' => 
@@ -189,6 +190,10 @@ class ComposerStaticInitd3121c7a243162ee5bfa7fa96c771736
         'Fxp\\Composer\\AssetPlugin\\' => 
         array (
             0 => __DIR__ . '/..' . '/fxp/composer-asset-plugin',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'Facebook\\WebDriver\\' => 
         array (

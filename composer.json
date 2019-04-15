@@ -6,7 +6,8 @@
         "codeception/codeception": "*",
         "romdim/yii2-bootstrap-material": "dev-master",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-debug": "^2.1"
+        "yiisoft/yii2-debug": "^2.1",
+        "fzaninotto/faker": "*"
     },
     "config": {
         "fxp-asset": {
