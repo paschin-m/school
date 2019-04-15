@@ -6,9 +6,7 @@ $db = require __DIR__ . '/db.php';
 
   $config= [
       'id'=>'school',
-
       'basePath' =>realpath(__DIR__.'/../'),
-
       'bootstrap'=>[
           'log', 'debug'
       ],
