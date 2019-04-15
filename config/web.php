@@ -15,6 +15,8 @@ $db = require __DIR__ . '/db.php';
               'enablePrettyUrl'=> false,
               'showScriptName'=>false
           ],
+          'db'=> $db,
+
         'request'=>[
             'cookieValidationKey' => 'qBbuejR7ap0rtcbu__SvWeHOb64NhLDB',
         ],
@@ -34,7 +36,7 @@ $db = require __DIR__ . '/db.php';
              'allowedIPs' => ['127.0.0.1', '::1']
          ]
      ],
-      'db'=> $db,
+
   ];
 
   return $config;
