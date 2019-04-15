@@ -21,8 +21,8 @@
             ]
     ]);
     $menu=[
-            ['label'=>'Войти', 'url'=>['/site/join']],
-            ['label'=>'Зарегистрироваться', 'url'=>['/site/login']],
+            ['label'=>'Войти', 'url'=>['/user/join']],
+            ['label'=>'Зарегистрироваться', 'url'=>['/user/login']],
     ];
     echo Nav::widget([
             'options'=>['class'=>'navbar-nav navbar-right'],

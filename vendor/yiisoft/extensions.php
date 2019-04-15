@@ -30,4 +30,13 @@ return array (
       '@romdim/bootstrap/material' => $vendorDir . '/romdim/yii2-bootstrap-material',
     ),
   ),
+  'yiisoft/yii2-debug' => 
+  array (
+    'name' => 'yiisoft/yii2-debug',
+    'version' => '2.1.1.0',
+    'alias' => 
+    array (
+      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
+    ),
+  ),
 );

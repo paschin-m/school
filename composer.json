@@ -5,7 +5,8 @@
         "aki/yii2-vue": "^0.5.1",
         "codeception/codeception": "*",
         "romdim/yii2-bootstrap-material": "dev-master",
-        "yiisoft/yii2-bootstrap": "*"
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-debug": "^2.1"
     },
     "config": {
         "fxp-asset": {
