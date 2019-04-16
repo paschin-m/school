@@ -35,7 +35,7 @@ class UserJoinForm extends Model
 
   public function errorIfEmailUsed()
   {
-    if (0==UserRecord::existsEmail($this->email))
+    if (0!=UserRecord::existsEmail($this->email))
        $this->addError('email','Пользователь с таким email уже существует');
   }
 }

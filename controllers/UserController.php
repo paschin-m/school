@@ -14,40 +14,44 @@ class UserController extends Controller
   {
     #разделим на GET и  POST данные
     if (Yii::$app->request->isPost)
-    {
-
       return $this->actionJoinPost();
-    }
+
     $userJoinForm=new UserJoinForm();
     $userRecord=new UserRecord();
     $userRecord->setTestUser();
     $userJoinForm->setUserRecord($userRecord);
-    return $this->render('join',['userJoinForm'=>$userJoinForm]);
+
+    return $this->render('join', compact('userJoinForm'));
   }
 
+  /**
+   * @return string
+   */
   public function actionJoinPost()
   {
    $userJoinForm=new UserJoinForm();
-   $userJoinForm->load(Yii::$app->request->post());
    if ($userJoinForm->load(Yii::$app->request->post()))
      if ($userJoinForm->validate())
-       $userJoinForm->name.="ok";
+     {
+         $userRecord=new UserRecord();
+         $userRecord->setUserJoinForm($userJoinForm);
+         $userRecord->save();
+         return $this->redirect('index.php?r=user/login'); #render() работать не будет всилу из-за возможного нажатия F5 и обновления страницы
+     }
    return $this->render('join', compact('userJoinForm'));
   }
 
   public function actionLogin()
   {
-  //  $uid=UserIdentity::findIdentity(1);
-  //  Yii::$app->user->login($uid);
 
-    return $this->render('login');
+    return $this->render('login'); # на вход
   }
 
   public function actionLogout()
   {
 
     Yii::$app->user->logout();
-    return $this->render('login');
+    return $this->render('login'); # на вход
   }
 
 }
