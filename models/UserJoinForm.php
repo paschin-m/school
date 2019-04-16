@@ -19,9 +19,16 @@ class UserJoinForm extends Model
         ['password','required','message'=>'обязательное поле введите данные'],
         ['password2','required','message'=>'обязательное поле введите данные'],
         ['name','string', 'min'=>3,'max'=>45,'message'=>'вы превысили лимит, возможно не бывает таких длинных имен!'],
-        ['email','email','message'=>'Здесь адре электронной почты, а не ВСЯКАЯХЕРНЯ!'],
+        ['email','email','message'=>'Здесь только адрес электронной почты!'],
         ['password','string','min'=>4],
         ['password2','compare','compareAttribute'=>'password','message'=>'Пароли не совпадают']
     ];
+  }
+  public function setUserRecord($userRecord)
+  {
+    $this->name=$userRecord->name;
+    $this->email=$userRecord->email;
+    $this->password=$this->password2="qwas";
+
   }
 }
