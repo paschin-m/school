@@ -5,7 +5,7 @@
       ?>
 <div class="panel panel-info">
     <div class="panel-heading  red-text">
-        <h1>Регистрация в системе:</h1>
+        <h1>Вход в систему:</h1>
     </div>
     <div class="panel-body">
       <?php $form=ActiveForm::begin(['id'=>'user-join-form']);?>
