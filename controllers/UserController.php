@@ -44,11 +44,24 @@ class UserController extends Controller
 
   public function actionLogin()
   {
+    if(Yii::$app->request->isPost)
+      return $this->actionLoginPost();
     $userLoginForm=new UserLoginForm();
 
     return $this->render('login', compact('userLoginForm')); # на вход передаем имена переменных объекта формы входа в виде массива
   }
 
+  public function actionLoginPost()
+  {
+    $userLoginForm=new UserLoginForm();
+    if ($userLoginForm->load(Yii::$app->request->post()))
+      if($userLoginForm->validate())
+      {
+        $userLoginForm->login();
+        return $this->redirect("index.php?r=site/index");
+      }
+    return $this->render('login', compact('userLoginForm')); # на вход передаем имена переменных объекта формы входа в виде массива
+  }
   public function actionLogout()
   {
 

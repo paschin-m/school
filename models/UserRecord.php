@@ -26,6 +26,11 @@ class UserRecord extends  ActiveRecord
     return $count >0;
   }
 
+  public static function findUserByEmail($email)
+  {
+    return $count=static::findOne(['email'=>$email]);
+  }
+
   public function setUserJoinForm(UserJoinForm $userJoinForm)
   {
     $this->name=$userJoinForm->name;
