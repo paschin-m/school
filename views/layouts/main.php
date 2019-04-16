@@ -20,10 +20,19 @@
                     'class'=>'navbar-default navbar-fixed-top'
             ]
     ]);
-    $menu=[
-            ['label'=>'Войти', 'url'=>['/user/join']],
-            ['label'=>'Зарегистрироваться', 'url'=>['/user/login']],
-    ];
+    if (Yii::$app->user->isGuest) {
+      $menu = [
+          ['label' => 'Войти', 'url' => ['/user/join']],
+          ['label' => 'Зарегистрироваться', 'url' => ['/user/login']],
+      ];
+    }
+
+    else {
+      $menu=[
+          ['label'=>Yii::$app->user->getIdentity()->name],
+          ['label'=>'Выйти', 'url'=>['/user/logout']],
+      ];
+    }
     echo Nav::widget([
             'options'=>['class'=>'navbar-nav navbar-right'],
             'items'=>$menu
