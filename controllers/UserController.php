@@ -6,6 +6,7 @@ namespace app\controllers;
  use app\models\UserJoinForm;
  use app\models\UserRecord;
  use yii\web\Controller;
+ use app\models\UserLoginForm;
  use Yii;
 
 class UserController extends Controller
@@ -43,8 +44,9 @@ class UserController extends Controller
 
   public function actionLogin()
   {
+    $userLoginForm=new UserLoginForm();
 
-    return $this->render('login'); # на вход
+    return $this->render('login', compact('userLoginForm')); # на вход передаем имена переменных объекта формы входа в виде массива
   }
 
   public function actionLogout()

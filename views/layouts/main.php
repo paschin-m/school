@@ -22,11 +22,10 @@
     ]);
     if (Yii::$app->user->isGuest) {
       $menu = [
-          ['label' => 'Войти', 'url' => ['/user/join']],
-          ['label' => 'Зарегистрироваться', 'url' => ['/user/login']],
+          ['label' => 'Зарегистрироваться', 'url' => ['/user/join']],
+          ['label' =>'Войти' , 'url' => ['/user/login']],
       ];
     }
-
     else {
       $menu=[
           ['label'=>Yii::$app->user->getIdentity()->name],
