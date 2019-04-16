@@ -21,7 +21,8 @@ class UserJoinForm extends Model
         ['name','string', 'min'=>3,'max'=>45,'message'=>'вы превысили лимит, возможно не бывает таких длинных имен!'],
         ['email','email','message'=>'Здесь только адрес электронной почты!'],
         ['password','string','min'=>4],
-        ['password2','compare','compareAttribute'=>'password','message'=>'Пароли не совпадают']
+        ['password2','compare','compareAttribute'=>'password','message'=>'Пароли не совпадают'],
+        ['email','errorIfEmailUsed']
     ];
   }
   public function setUserRecord($userRecord)
@@ -30,5 +31,12 @@ class UserJoinForm extends Model
     $this->email=$userRecord->email;
     $this->password=$this->password2="qwas";
 
+  }
+
+  public function errorIfEmailUsed()
+  {
+    if (0==UserRecord::existsEmail($this->email))
+      return ;
+    $this->addError('email','Пользователь с таким email уже существует');
   }
 }

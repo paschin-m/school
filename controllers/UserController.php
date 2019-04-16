@@ -15,6 +15,7 @@ class UserController extends Controller
     #разделим на GET и  POST данные
     if (Yii::$app->request->isPost)
     {
+
       return $this->actionJoinPost();
     }
     $userJoinForm=new UserJoinForm();
@@ -28,6 +29,9 @@ class UserController extends Controller
   {
    $userJoinForm=new UserJoinForm();
    $userJoinForm->load(Yii::$app->request->post());
+   if ($userJoinForm->load(Yii::$app->request->post()))
+     if ($userJoinForm->validate())
+       $userJoinForm->name.="ok";
    return $this->render('join', compact('userJoinForm'));
   }
 

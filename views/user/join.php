@@ -14,14 +14,6 @@ use yii\helpers\Html;
       <?= $form->field($userJoinForm, 'email')->label('Введите e-mail') ?>
       <?= Html::submitButton('Зарегистрироваться',['class'=>'btn btn-danger']) ?>
       <?php ActiveForm::end(); ?>
-
-        <ul>
-            <li>Имяпользователя</li>
-            <li>пароль</li>
-            <li>подтверждение</li>
-            <li>почта</li>
-        </ul>
-
     </div>
 </div>
 
