@@ -8,6 +8,7 @@ class UserLoginForm extends Model
 {
   public $email;
   public $password;
+  public $remember;
 
   private $userRecord;
 
@@ -16,6 +17,7 @@ class UserLoginForm extends Model
     return [
             ['email','required','message'=>'поле не может быть пустым'],
             ['password','required','message'=>'поле не может быть пустым'],
+            ['remember','boolean'],
             ['email','email','message'=>'совсем охуел человек ебаный!'],
             ['email','errorIfEmailNotFound'], #собственная проверка почты, а что если нет никакой почты!?
             ['password','errorIfPasswordWrong','message'=>'не верный пароль для входа']
@@ -43,6 +45,6 @@ class UserLoginForm extends Model
     if($this->hasErrors())
       return ;
     $userIdentity=UserIdentity::findIdentity($this->userRecord->id);
-    Yii::$app->user->login($userIdentity);
+    Yii::$app->user->login($userIdentity, $this->remember ? 3600*24 :0); #если кука не указана, то все не передаем ничего
   }
 }

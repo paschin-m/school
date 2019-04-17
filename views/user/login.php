@@ -11,6 +11,7 @@
       <?php $form=ActiveForm::begin(['id'=>'user-join-form']);?>
       <?= $form->field($userLoginForm, 'email')->label('Введите e-mail') ?>
       <?= $form->field($userLoginForm, 'password')->label('Введите пароль')->passwordInput() ?>
+      <?= $form->field($userLoginForm, 'remember')->label('Запомнить')->checkbox() ?>
 
       <?= Html::submitButton('Войти',['class'=>'btn btn-primary']) ?>
       <?php ActiveForm::end(); ?>
