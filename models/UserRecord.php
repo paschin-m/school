@@ -43,6 +43,7 @@ class UserRecord extends  ActiveRecord
   public function setPassword($password)
   {
     $this->passhash=Yii::$app->security->generatePasswordHash($password);
+    $this->authokey=Yii::$app->security->generateRandomString(100);
   }
 
   public function validatePassword($password)

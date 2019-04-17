@@ -17,7 +17,8 @@ $db = require __DIR__ . '/db.php';
           ],
           'db'=> $db,
           'user'=>[
-              'identityClass'=>'app\models\UserIdentity'
+              'identityClass'=>'app\models\UserIdentity',
+              'enableAutoLogin'=>true
           ],
 
         'request'=>[
