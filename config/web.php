@@ -1,4 +1,5 @@
 <?php
+use app\models\UserRecord;
 
 //$params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
@@ -24,6 +25,14 @@ $db = require __DIR__ . '/db.php';
         'request'=>[
             'cookieValidationKey' => 'qBbuejR7ap0rtcbu__SvWeHOb64NhLDB',
         ],
+          'authManager' => [
+              'class' => 'yii\rbac\PhpManager',
+              'itemFile' => '@app/rbac/items.php',
+              'ruleFile' => '@app/rbac/rules.php',
+              'assignmentFile' => '@app/rbac/assignments.php', // назначения придется указать, потому что того требуют каноны церкви
+              'defaultRoles' => UserRecord::roleArray(),
+          ],
+
           'log' => [
               'traceLevel' => YII_DEBUG ? 3 : 0,
               'targets' => [

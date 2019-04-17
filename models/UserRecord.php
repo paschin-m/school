@@ -4,12 +4,39 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 use  Yii;
+use yii\db\Query;
 
 class UserRecord extends  ActiveRecord
 {
+  const ROLE_SUPERUSER = 'superuser';
+  const ROLE_REGISTERED = 'registered';
+  const ROLE_GUEST = 'guest';
+
+  /**
+   * Возвращает массив всех доступных ролей.
+   * @return array
+   */
+  static public function roleArray()
+  {
+    return [
+        self::ROLE_SUPERUSER,
+        self::ROLE_REGISTERED,
+        self::ROLE_GUEST,
+    ];
+  }
+
   public  static function tableName()
   {
     return "user";
+  }
+
+  public static function getRoleOfUser($id)
+  {
+    return (new Query)
+        ->select('role')
+        ->from(self::tableName())
+        ->where(['id' => $id])
+        ->scalar();
   }
 
   public function setTestUser()
